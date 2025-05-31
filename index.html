@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Myanmar Coup: A Data-Driven Analysis</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js" charset="utf-8"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+background-color: #f0f2f5;
+}
+.chart-container {
+position: relative;
+width: 100%;
+max-width: 600px;
+margin-left: auto;
+margin-right: auto;
+height: 350px;
+max-height: 400px;
+}
+@media (min-width: 768px) {
+.chart-container {
+height: 400px;
+}
+}
+.text-balance {
+text-wrap: balance;
+}
+</style>
+</head>
+<body class="text-[#343434]">
+<main class="container mx-auto p-4 md:p-8">
+<header class="text-center py-12">
+<h1 class="text-4xl md:text-6xl font-black text-[#00A6FB] text-balance">The 2021 Myanmar Coup</h1>
+<p class="mt-4 text-lg md:text-xl text-balance">A Data-Driven Analysis of a Nation's Democratic Reversal</p>
+</header>
+
+<section id="election" class="mb-16">
+        <div class="text-center max-w-4xl mx-auto mb-10">
+            <h2 class="text-3xl font-bold mb-4">The Flashpoint: An Undisputed Landslide</h2>
+            <p class="text-lg text-gray-700 text-balance">The immediate catalyst for the coup was the November 2020 general election. The National League for Democracy (NLD) won a staggering victory, a result the military refused to accept, citing unsubstantiated claims of widespread fraud. This section visualizes the electoral reality versus the military's pretext.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
+                <h3 class="text-xl font-bold mb-4">2020 Parliamentary Seat Distribution</h3>
+                <div class="chart-container w-full h-80 md:h-96">
+                    <canvas id="electionResultsChart"></canvas>
+                </div>
+                <p class="mt-4 text-center text-gray-600">The NLD secured approximately 83% of the contested seats, an even larger mandate than in 2015. The military's proxy party, the USDP, won a mere 7%, a result that was widely verified by domestic and international observers as legitimate.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
+                <h3 class="text-xl font-bold mb-4">The Pretext: Alleged vs. Actual Fraud</h3>
+                 <div class="w-full text-center p-8">
+                    <div class="mb-8">
+                        <p class="text-6xl font-black text-[#F95738]">8.6 Million+</p>
+                        <p class="text-xl font-semibold">Alleged Voter List Errors Claimed by the Tatmadaw</p>
+                    </div>
+                    <hr class="border-gray-300 my-6">
+                    <div>
+                        <p class="text-6xl font-black text-[#23CE6B]">0</p>
+                        <p class="text-xl font-semibold">Major Irregularities Found by Election Observers</p>
+                    </div>
+                </div>
+                <p class="mt-4 text-center text-gray-600">The military's claim of millions of fraudulent votes was dismissed by the Union Election Commission and observers, who found no evidence that could have altered the election's outcome, highlighting the claim's function as a political pretext.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="power" class="mb-16">
+         <div class="text-center max-w-4xl mx-auto mb-10">
+            <h2 class="text-3xl font-bold mb-4">Deep Roots of Power: The Tatmadaw's Constitutional Fortress</h2>
+            <p class="text-lg text-gray-700 text-balance">The coup was not just about one election. It was the activation of a power structure meticulously designed by the military itself. The 2008 Constitution created a "disciplined democracy" where the Tatmadaw's authority was guaranteed, making any genuine democratic challenge an existential threat to their dominance.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-8">
+            <h3 class="text-2xl font-bold text-center mb-8">Military's Guaranteed Powers Under the 2008 Constitution</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                <div class="border-2 border-[#00A6FB] rounded-lg p-4 bg-blue-50">
+                    <p class="text-5xl font-bold mb-2">25%</p>
+                    <p class="font-semibold">Of Parliamentary seats reserved for serving military officers.</p>
+                </div>
+                <div class="border-2 border-[#F9C80E] rounded-lg p-4 bg-yellow-50">
+                    <p class="text-5xl font-bold mb-2">3</p>
+                    <p class="font-semibold">Key Ministries (Defense, Home, Border) controlled by military appointees.</p>
+                </div>
+                <div class="border-2 border-[#F95738] rounded-lg p-4 bg-red-50">
+                    <p class="text-3xl font-bold mb-2">VETO</p>
+                    <p class="font-semibold">Effective veto power over any constitutional amendments.</p>
+                </div>
+                <div class="border-2 border-[#23CE6B] rounded-lg p-4 bg-green-50">
+                    <p class="text-3xl font-bold mb-2">EMERGENCY</p>
+                    <p class="font-semibold">The power to declare a state of emergency and seize control of government.</p>
+                </div>
+            </div>
+             <p class="mt-8 text-center text-gray-600">These provisions ensured that even with a landslide electoral victory, the civilian government could never achieve true supremacy, as the military held the ultimate levers of state power.</p>
+        </div>
+    </section>
+
+    <section id="motives" class="mb-16">
+        <div class="text-center max-w-4xl mx-auto mb-10">
+            <h2 class="text-3xl font-bold mb-4">Personal Stakes & Economic Imperatives</h2>
+            <p class="text-lg text-gray-700 text-balance">Beyond institutional power, the coup was driven by the personal and financial interests of its leaders. For Senior General Min Aung Hlaing, an impending retirement and potential accountability for war crimes created a powerful personal motive, while the military's vast economic empire was at risk under a reforming civilian government.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+             <div class="bg-white rounded-lg shadow-lg p-6">
+                 <h3 class="text-xl font-bold text-center mb-4">Commander-in-Chief's Personal Timeline</h3>
+                 <div class="relative pt-4">
+                    <div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+                    <div class="flex items-center mb-12">
+                        <div class="w-1/2 text-right pr-8">
+                            <p class="font-bold text-[#F95738]">November 2020</p>
+                            <p>NLD wins landslide, diminishing Hlaing's path to a post-military political career.</p>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-[#F95738] border-4 border-white z-10 mx-auto"></div>
+                        <div class="w-1/2"></div>
+                    </div>
+                    <div class="flex items-center mb-12">
+                        <div class="w-1/2"></div>
+                        <div class="w-8 h-8 rounded-full bg-[#00A6FB] border-4 border-white z-10 mx-auto"></div>
+                        <div class="w-1/2 text-left pl-8">
+                            <p class="font-bold text-[#00A6FB]">February 1, 2021</p>
+                            <p>Coup is launched, securing Hlaing's power and preventing NLD from forming a new government.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-1/2 text-right pr-8">
+                            <p class="font-bold text-gray-500">July 2021</p>
+                            <p>Scheduled mandatory retirement at age 65, which would have meant loss of power and immunity.</p>
+                        </div>
+                        <div class="w-8 h-8 rounded-full bg-gray-500 border-4 border-white z-10 mx-auto"></div>
+                        <div class="w-1/2"></div>
+                    </div>
+                 </div>
+                 <p class="mt-6 text-center text-gray-600">The coup preempted Min Aung Hlaing's retirement, preserving his authority and shielding him from potential prosecution for alleged war crimes against the Rohingya.</p>
+            </div>
+             <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-center items-center">
+                <h3 class="text-xl font-bold mb-4">Protecting Military Conglomerates</h3>
+                <p class="text-center text-4xl md:text-5xl font-black text-[#00A6FB] mb-2">Billions at Stake</p>
+                <p class="text-center text-gray-600">The Tatmadaw controls vast business conglomerates with interests in everything from jade and rubies to banking and tourism. A fully democratic government threatened this lucrative economic empire with transparency and anti-corruption reforms, providing a powerful financial incentive for the coup.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="aftermath" class="mb-16">
+        <div class="text-center max-w-4xl mx-auto mb-10">
+            <h2 class="text-3xl font-bold mb-4">The Catastrophic Aftermath: A Nation in Crisis</h2>
+            <p class="text-lg text-gray-700 text-balance">The consequences of the coup have been devastating, plunging Myanmar into a full-fledged civil war and reversing a decade of socio-economic progress. The humanitarian and economic costs continue to mount, creating a multifaceted "polycrisis" that grips the nation.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold mb-4 text-center">Economic Collapse: GDP Growth & Poverty Rate</h3>
+                <div class="chart-container w-full h-80 md:h-96">
+                    <canvas id="economicImpactChart"></canvas>
+                </div>
+                 <p class="mt-4 text-center text-gray-600">The economy contracted sharply by nearly 18% in 2021. Poverty has more than doubled, with nearly half the population now living below the poverty line, wiping out years of economic development.</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold mb-4 text-center">The Human Cost</h3>
+                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-center h-full content-center">
+                    <div class="p-4">
+                        <p class="text-5xl font-black text-[#F95738]">4,500+</p>
+                        <p class="font-semibold">Civilians Killed by the Junta (as of early 2024)</p>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-5xl font-black text-[#F9C80E]">2.6 Million+</p>
+                        <p class="font-semibold">People Internally Displaced by Conflict</p>
+                    </div>
+                     <div class="p-4">
+                        <p class="text-5xl font-black text-[#00A6FB]">20,000+</p>
+                        <p class="font-semibold">Political Prisoners Detained</p>
+                    </div>
+                     <div class="p-4">
+                        <p class="text-5xl font-black text-[#23CE6B]">18.6 Million</p>
+                        <p class="font-semibold">People in Need of Humanitarian Assistance</p>
+                    </div>
+                 </div>
+            </div>
+             <div class="lg:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold mb-4 text-center">Escalation of Conflict: Post-Coup Armed Clashes</h3>
+                <div class="w-full h-[500px]">
+                    <div id="conflictMap" class="w-full h-full"></div>
+                </div>
+                 <p class="mt-4 text-center text-gray-600">The coup ignited widespread armed resistance. This map visualizes the intensity of armed clashes from 2021-2023. While conflict was historically concentrated in border regions, the post-coup era has seen fighting erupt across the country, including in central Bamar-majority areas.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+const chartColors = {
+    nld: '#F95738',
+    usdp: '#343434',
+    others: '#cccccc',
+    blue: '#00A6FB',
+    yellow: '#F9C80E',
+    green: '#23CE6B',
+    dark: '#343434'
+};
+
+const tooltipTitleCallback = (tooltipItems) => {
+    const item = tooltipItems[0];
+    let label = item.chart.data.labels[item.dataIndex];
+    if (Array.isArray(label)) {
+        return label.join(' ');
+    }
+    return label;
+};
+
+const wrapLabel = (label, maxLength = 16) => {
+    if (label.length <= maxLength) {
+        return label;
+    }
+    const words = label.split(' ');
+    const lines = [];
+    let currentLine = '';
+    for (const word of words) {
+        if ((currentLine + ' ' + word).trim().length > maxLength) {
+            lines.push(currentLine.trim());
+            currentLine = word;
+        } else {
+            currentLine = (currentLine + ' ' + word).trim();
+        }
+    }
+    if (currentLine) {
+        lines.push(currentLine.trim());
+    }
+    return lines;
+};
+
+const electionCtx = document.getElementById('electionResultsChart')?.getContext('2d');
+if (electionCtx) {
+    new Chart(electionCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['National League for Democracy (NLD)', 'Union Solidarity and Development Party (USDP)', 'Other Parties & Independents'],
+            datasets: [{
+                data: [396, 33, 47],
+                backgroundColor: [chartColors.nld, chartColors.usdp, chartColors.others],
+                borderColor: '#ffffff',
+                borderWidth: 4,
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '70%',
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                },
+                tooltip: {
+                    callbacks: {
+                       title: tooltipTitleCallback
+                    }
+                },
+                title: {
+                    display: false
+                }
+            }
+        }
+    });
+}
+
+const economicCtx = document.getElementById('economicImpactChart')?.getContext('2d');
+if (economicCtx) {
+    new Chart(economicCtx, {
+        type: 'line',
+        data: {
+            labels: ['2018', '2019', '2020 (Pre-Coup)', '2021 (Post-Coup)', '2022', '2023'],
+            datasets: [{
+                label: 'GDP Growth (%)',
+                data: [6.8, 6.5, 3.2, -17.9, 3.0, 2.8],
+                borderColor: chartColors.nld,
+                backgroundColor: 'rgba(249, 87, 56, 0.1)',
+                yAxisID: 'y',
+                tension: 0.1,
+                fill: true,
+            }, {
+                label:'Poverty Rate (%)',
+                data: [22.4, 21.0, 24.8, 40.0, 45.0, 49.7],
+                borderColor: chartColors.blue,
+                backgroundColor: 'rgba(0, 166, 251, 0.1)',
+                yAxisID: 'y1',
+                tension: 0.1,
+                fill: false,
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    type: 'linear',
+                    display: true,
+                    position:'left',
+                    title: {
+                        display: true,
+                        text: 'GDP Growth (%)'
+                    }
+                },
+                y1: {
+                    type: 'linear',
+                    display: true,
+                    position: 'right',
+                    title: {
+                        display: true,
+                        text: 'Poverty Rate (%)'
+                    },
+                    grid: {
+                        drawOnChartArea: false, 
+                    },
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                },
+                tooltip: {
+                    mode: 'index',
+                    intersect: false,
+                }
+            }
+        }
+    });
+}
+
+const conflictMap = document.getElementById('conflictMap');
+if (conflictMap) {
+    const data = [{
+        type: 'scattergeo',
+        mode: 'markers',
+        lon: [96.1951, 97.03, 94.9, 97.7, 96.1, 98.5, 99.0],
+        lat: [16.8661, 21.95, 22.1, 16.5, 19.7, 19.5, 24.0],
+        text: ['Yangon Region', 'Shan State', 'Sagaing Region', 'Kayin State', 'Naypyidaw', 'Kayah State', 'Kachin State'],
+        marker: {
+            size: [30, 45, 50, 40, 25, 48, 42],
+            color: [chartColors.nld, chartColors.yellow, chartColors.blue, chartColors.nld, chartColors.dark, chartColors.nld, chartColors.blue],
+            cmin: 0,
+            cmax: 50,
+            colorscale: 'Reds',
+            showscale: false,
+            opacity: 0.7
+        },
+    }];
+
+    const layout = {
+        title: 'Conflict Hotspots by Reported Clashes (Bubble Size)',
+        showlegend: false,
+        geo: {
+            scope: 'asia',
+            center: { lon: 96, lat: 20 },
+            projection: {
+                type: 'mercator',
+                scale: 5
+            },
+            landcolor: 'rgb(240, 242, 245)',
+            subunitcolor: 'rgb(204, 204, 204)',
+            bgcolor: 'rgba(255, 255, 255, 0)',
+            showland: true,
+            lataxis: { range: [9, 29] },
+            lonaxis: { range: [92, 102] }
+        },
+        margin: { t: 40, b: 0, l: 0, r: 0 },
+        paper_bgcolor: 'rgba(255,255,255,0)',
+        plot_bgcolor: 'rgba(255,255,255,0)'
+    };
+
+    Plotly.newPlot('conflictMap', data, layout, {responsive: true, displayModeBar: false});
+}
+});
+</script>
+
+</body>
+</html>
